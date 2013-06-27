@@ -1,0 +1,14 @@
+<h1>Appointments</h1>
+
+
+<% @appointments.each do |appointment| %>
+<ul>
+	<li>
+		<%= appointment.date %>
+		<%= appointment.time %>
+		<%= appointment.doctor.name %>
+		<%= appointment.patient.name %>
+		<%= link_to("Delete", appointment_path(appointment.id), :method => :delete) %>
+	</li>
+</ul>
+<% end %>

@@ -1,0 +1,25 @@
+<div class ="bk-appt">
+<%= form_for @appointment do |f| %>
+	<label class="details date"> Date </label>
+	<%= f.date_select :date, :order => [:day, :month, :year] %>
+
+	<br>
+
+	<label class="details time"> Time </label>
+	<%= f.time_select :time %>
+
+	<br>
+
+	<label class="details doctor"> Doctor </label>
+	<%= f.collection_select :doctor_id, Doctor.all, :id, :name %>
+
+
+	<br>
+	<label class="details patient"> Patient </label>
+	<%= f.collection_select :patient_id, Patient.all, :id, :name %>
+
+	<br>
+
+	<%= f.submit %>
+<% end %>
+</div>
